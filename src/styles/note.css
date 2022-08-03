@@ -1,0 +1,23 @@
+.note__header {
+    @apply flex border-b-2 border-neutral-800;
+}
+
+.note__heading {
+    @apply px-4 h-20 grow flex justify-between items-center;
+}
+
+.note__title {
+    @apply text-4xl;
+}
+
+.note__date {
+    @apply text-lg;
+}
+
+.note__delete {
+    @apply w-20 border-l-2 border-neutral-800;
+}
+
+.note__body, .note__footer {
+    @apply hidden;
+}

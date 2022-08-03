@@ -1,0 +1,7 @@
+.notes__header {
+    @apply px-4 py-4 border-b-2 border-neutral-800 hidden;
+}
+
+.notes__title {
+    @apply text-center uppercase text-4xl -mb-2;
+}

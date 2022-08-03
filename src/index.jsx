@@ -1,16 +1,8 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-
-import dummy from './utils/dummy';
+import './styles/index.css';
+import RemarqueApp from './components/RemarqueApp';
 
 const root = createRoot(document.getElementById('root'));
 
-const el = (
-  <ul>
-    {dummy.map((data) => (
-      <li>{data.title}</li>
-    ))}
-  </ul>
-);
-
-root.render(el);
+root.render(<RemarqueApp />);
