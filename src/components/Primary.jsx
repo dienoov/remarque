@@ -9,8 +9,10 @@ function Primary({ notes }) {
         <h2 className="notes__title">Primary</h2>
       </header>
       <div>
-        {notes.map(({ title, body, createdAt }) => (
-          <Note createdAt={createdAt} title={title} body={body} />
+        {notes.map(({
+          title, body, createdAt, id,
+        }) => (
+          <Note createdAt={createdAt} title={title} body={body} key={id} />
         ))}
       </div>
     </section>

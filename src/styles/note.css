@@ -1,23 +1,60 @@
-.note__header {
-    @apply flex border-b-2 border-neutral-800;
+.note {
+    grid-template-areas: 'note__header note__footer' 'note__body note_footer';
+    grid-template-columns: calc(100% - 5rem) 4rem;
+    grid-template-rows: 3rem 1fr;
+    @apply grid border-b-2 border-neutral-800 max-h-12 overflow-y-hidden transition-[max-height] duration-300 ease-out;
 }
 
-.note__heading {
-    @apply px-4 h-20 grow flex justify-between items-center;
+.note-show {
+    @apply max-h-80;
+}
+
+.note__header {
+    grid-area: note__header;
+    @apply px-4 h-12 flex justify-between items-center border-b-2 border-r-2 border-neutral-800;
 }
 
 .note__title {
-    @apply text-4xl;
+    @apply text-2xl;
 }
 
 .note__date {
-    @apply text-lg;
+    @apply text-lg hidden;
 }
 
-.note__delete {
-    @apply w-20 border-l-2 border-neutral-800;
+.note__body {
+    grid-area: note__body;
+    @apply p-4 min-h-[15rem] border-r-2 border-neutral-800;
 }
 
-.note__body, .note__footer {
-    @apply hidden;
+.note__footer {
+    grid-area: note__footer;
+    @apply flex flex-col;
+}
+
+.note__button {
+    @apply block w-20 h-12 border-b-2 border-neutral-800 shrink-0;
+}
+
+@screen sm {
+    .note {
+        grid-template-rows: 4rem 1fr;
+        @apply max-h-16;
+    }
+
+    .note-show {
+        @apply max-h-80;
+    }
+
+    .note__header, .note__button {
+        @apply h-16;
+    }
+
+    .note__title {
+        @apply text-4xl;
+    }
+
+    .note__date {
+        @apply block;
+    }
 }
